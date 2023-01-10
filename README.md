@@ -44,8 +44,7 @@ One the web page has loaded, righ-click on the screen and select "inspect"
 Once the inspection window is open on the right, select the "Console" tab on the top and this should will bring up the calculations I have created.
 
 ## Link to website
-In coming
-
+https://claudiof9.github.io/Console-Finances/
 
 ## Screenshot
 In coming
