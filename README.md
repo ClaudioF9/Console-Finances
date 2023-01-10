@@ -47,7 +47,7 @@ Once the inspection window is open on the right, select the "Console" tab on the
 https://claudiof9.github.io/Console-Finances/
 
 ## Screenshot
-
+![Console-Finance-Screenshot](https://user-images.githubusercontent.com/119876939/211633710-bf022e1b-d16b-4fd9-a9fa-2140c2ab7ef2.JPG)
 
 ## Credits
 
