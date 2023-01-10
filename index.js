@@ -147,4 +147,3 @@ let minIndex = difference.findIndex(subArray => subArray[1] === minValue);
 // Concatenate text, pull date from index and show min profit
 console.log("Greatest Decrease in Profits:", difference[minIndex][0], "($"+minValue+")");
 
-console.log(difference);
