@@ -101,6 +101,49 @@ let totalSum = 0
 for (let i = 0; i < finances.length; i++) {
     totalSum = totalSum + finances[i][1];
 }
-console.log("Total:", totalSum);
+console.log("Total: $"+totalSum);
+
+// finances.unshift(["Date",0]);
+// console.log(finances);
 
 
+// Work out average change to 2 decimal points
+let change=0;
+for(let i=1; i<finances.length;i++){
+    change += finances[i][1]-finances[i-1][1];
+}
+
+let averageChange = change/(finances.length-1);
+averageChange = (averageChange).toFixed(2);
+console.log("Average Change: $"+averageChange);
+
+// creating new array with differences
+
+var difference = [];
+for (var i = 1; i < finances.length; i++) {
+    var currentValue = finances[i][1];
+    var previousValue = finances[i-1][1];
+    difference.push([finances[i][0], currentValue - previousValue]);
+}
+// console.log(difference);
+
+
+// calculating Max profit from new (difference) array
+let maxValue = Math.max(...difference.map(subArray => subArray[1]));
+
+// indentify index number to pull date
+let maxIndex = difference.findIndex(subArray => subArray[1] === maxValue);
+
+// console.log(maxIndex);
+
+// Concatenate text, pull date from index and show max profit
+console.log("Greatest Increase in Profits:", difference[maxIndex][0], "($"+maxValue+")");
+
+// calculating min profit from new (difference) array
+let minValue = Math.min(...difference.map(subArray => subArray[1]));
+
+// indentify index number to pull date
+let minIndex = difference.findIndex(subArray => subArray[1] === minValue);
+
+// Concatenate text, pull date from index and show min profit
+console.log("Greatest Decrease in Profits:", difference[minIndex][0], "($"+minValue+")");
