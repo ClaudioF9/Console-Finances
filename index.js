@@ -103,14 +103,13 @@ for (let i = 0; i < finances.length; i++) {
 }
 console.log("Total: $"+totalSum);
 
-// finances.unshift(["Date",0]);
-// console.log(finances);
-
 
 // Work out average change to 2 decimal points
 let change=0;
 for(let i=1; i<finances.length;i++){
-    change += finances[i][1]-finances[i-1][1];
+    let currentValue = finances[i][1];
+    let previousValue = finances[i-1][1];
+    change += currentValue-previousValue;
 }
 
 let averageChange = change/(finances.length-1);
@@ -119,10 +118,10 @@ console.log("Average Change: $"+averageChange);
 
 // creating new array with differences
 
-var difference = [];
-for (var i = 1; i < finances.length; i++) {
-    var currentValue = finances[i][1];
-    var previousValue = finances[i-1][1];
+let difference = [];
+for (let i = 1; i < finances.length; i++) {
+    let currentValue = finances[i][1];
+    let previousValue = finances[i-1][1];
     difference.push([finances[i][0], currentValue - previousValue]);
 }
 // console.log(difference);
@@ -147,3 +146,5 @@ let minIndex = difference.findIndex(subArray => subArray[1] === minValue);
 
 // Concatenate text, pull date from index and show min profit
 console.log("Greatest Decrease in Profits:", difference[minIndex][0], "($"+minValue+")");
+
+console.log(difference);
