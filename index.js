@@ -105,16 +105,16 @@ console.log("Total: $"+totalSum);
 
 
 // Work out average change to 2 decimal points
-let change=0;
-for(let i=1; i<finances.length;i++){
-    let currentValue = finances[i][1];
-    let previousValue = finances[i-1][1];
-    change += currentValue-previousValue;
-}
 
-let averageChange = change/(finances.length-1);
+let totalChange = 0;
+for (let j = 1; j < finances.length; j++) {
+totalChange += finances[j][1] - finances[j-1][1];
+}
+let averageChange = totalChange / (finances.length - 1);
 averageChange = (averageChange).toFixed(2);
+
 console.log("Average Change: $"+averageChange);
+
 
 // creating new array with differences
 
